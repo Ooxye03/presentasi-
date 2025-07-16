@@ -1,10 +1,15 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: #f6f6f6;
+  background: #fdfcfb;
   color: #333;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+main {
+  width: 100%;
+}
+
 .slide {
   height: 100vh;
   padding: 40px;
@@ -12,28 +17,41 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-}
-h1, h2, p {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transition: all 0.5s ease;
   text-align: center;
-  margin: 10px;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
   opacity: 0;
 }
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  opacity: 0;
+}
+
 .fade {
   animation: fadeInUp 1.5s ease-out forwards;
 }
+
 .fade.delay {
-  animation-delay: 0.8s;
+  animation-delay: 0.5s;
 }
+
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-  from {
-    opacity: 0;
-    transform: translateY(20px);
   }
 }
